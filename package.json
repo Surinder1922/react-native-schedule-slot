@@ -1,6 +1,6 @@
 {
   "name": "react-native-schedule-slot",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "This package is designed to manage daily booking slots for each month with easy-to-use props and components. It doesn't require any third-party libraries or native configuration. Additionally, it displays booked slots on the calendar grid in different colors and offers fully customizable UI options.",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",

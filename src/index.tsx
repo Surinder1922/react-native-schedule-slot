@@ -15,6 +15,7 @@ import {
   FlatList,
   Platform,
   Dimensions,
+  type ViewStyle,
 } from 'react-native';
 import { getDayOfWeek, getHoursAndMinutes, getMonthName } from './helper';
 
@@ -377,6 +378,18 @@ const RNBooking: React.FC<RNBookingProps> = ({
     colors.notAvailableSlotColor,
     hideSlotInfoFooter,
   ]);
+
+  const flatListContainerStyle = useMemo(() => {
+    return Platform.OS === 'web'
+      ? {
+          width: Dimensions.get('window').width - slotSize,
+          flex: 1,
+          marginRight: 'auto',
+          marginLeft: 'auto',
+        }
+      : {};
+  }, [slotSize]);
+
   return (
     <SafeAreaView
       style={[styles.container, { backgroundColor: colors.backgroundColor }]}
@@ -423,16 +436,7 @@ const RNBooking: React.FC<RNBookingProps> = ({
               </View>
             ))}
           </View>
-          <View
-            style={
-              Platform.OS === 'web' && {
-                width: Dimensions.get('window').width - SLOT_SIZE,
-                flex: 1,
-                marginRight: 'auto',
-                marginLeft: 'auto',
-              }
-            }
-          >
+          <View style={flatListContainerStyle as ViewStyle}>
             <FlatList
               data={calendar}
               ref={flatListRef}
