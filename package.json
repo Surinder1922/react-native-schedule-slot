@@ -47,7 +47,18 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "time-slot",
+    "time-slots",
+    "slot",
+    "booking",
+    "schedule",
+    "schedule-slot",
+    "slot-schedule",
+    "schedule-slots",
+    "monthly-slot",
+    "calender-slot",
+    "book-slot"
   ],
   "repository": {
     "type": "git",
